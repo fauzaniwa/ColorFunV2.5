@@ -1,0 +1,12 @@
+Cara Akses Admin.
+1. Klik logo Signature
+2. Masukkan username dan password sebagai berikut
+Username : colorfun
+password : admin
+3. Ubah EndPoint untuk database dan image
+4. Pilih template yang ingin di tampilkan.
+
+
+Default EndPoint
+URL Upload Database : https://colorfun.registercepat.net/simpan_data_colorfun.php
+URL Upload Image : https://colorfun.registercepat.net/upload_image_colorfun.php
