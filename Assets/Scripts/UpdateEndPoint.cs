@@ -38,8 +38,8 @@ public class UpdateEndPoint : MonoBehaviour
         // Bersihkan konten dropdown
         templateDropdown.ClearOptions();
 
-        // Tambahkan pilihan "Template 1" dan "Template 2 Hindi"
-        templateDropdown.AddOptions(new List<string> { "Template 1", "Template 2 Hindi" });
+        // Tambahkan pilihan "Template 1", "Template 2 Hindi", dan "Template 3"
+        templateDropdown.AddOptions(new List<string> { "Template 1", "Template 2 Hindi", "Template 3" });
     }
 
     public void OnSaveButtonClicked()
@@ -74,6 +74,10 @@ public class UpdateEndPoint : MonoBehaviour
         else if (index == 1)
         {
             PlayerPrefs.SetInt("SelectedTemplate", 2); // Template 2 Hindi
+        }
+        else if (index == 2)
+        {
+            PlayerPrefs.SetInt("SelectedTemplate", 3); // Template 3
         }
     }
 }
