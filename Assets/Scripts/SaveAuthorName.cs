@@ -10,6 +10,7 @@ public class SaveAuthorName : MonoBehaviour
     [SerializeField] private GameObject template1;
     [SerializeField] private GameObject template2;
     [SerializeField] private GameObject template3; // Referensi ke GameObject Template 3
+    [SerializeField] private GameObject BG;
 
     public void Save()
     {
@@ -18,7 +19,7 @@ public class SaveAuthorName : MonoBehaviour
             InputPopupName.SetActive(false);
             SelectTemplateDesainPopup.SetActive(true);
             gameData.currentAuthor = nameField.text;
-
+            BG.SetActive(false);
             // Pengecekan dan aktifkan template berdasarkan nilai PlayerPrefs "SelectedTemplate"
             int selectedTemplate = PlayerPrefs.GetInt("SelectedTemplate", 1);
             if (selectedTemplate == 1)

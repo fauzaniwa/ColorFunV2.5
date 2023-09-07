@@ -7,11 +7,11 @@ public class UploadImage : MonoBehaviour
 {
     private CarouselScreenshot carouselScreenshot;
     public string phpEndpointSaveData = "https://colorfun.registercepat.net/simpan_data_colorfun.php"; // Hilangkan [SerializeField] agar nilai dapat diubah oleh PlayerPrefs
-    public string phpEndpointSaveData2 = "http://dkvsaturasi.com/sampleproject/simpan_data_colorfun.php";
+    public string phpEndpointSaveData2 = "https://dkvsaturasi.com/sampleproject/simpan_data_colorfun.php";
     private QRCodeGeneratorScript qrCodeGenerator;
-
+    
     public GameObject saveButton;
-
+    //public GameObject error;
     [SerializeField]
     private GameData gameData;
 
@@ -33,11 +33,13 @@ public class UploadImage : MonoBehaviour
             else
             {
                 Debug.LogError("Komponen Button tidak ditemukan pada objek SaveButton!");
+                
             }
         }
         else
         {
             Debug.LogError("Objek SaveButton belum di-set di inspector Unity!");
+            
         }
     }
 
@@ -60,11 +62,13 @@ public class UploadImage : MonoBehaviour
             else
             {
                 Debug.LogError("Objek GameData belum di-set di inspector Unity!");
+                
             }
         }
         else
         {
             Debug.LogError("Objek CarouselScreenshot belum diinisialisasi!");
+            
         }
     }
 
@@ -111,12 +115,14 @@ public class UploadImage : MonoBehaviour
             {
                 Debug.LogError("Gagal menyimpan data ke database (phpEndpointSaveData2): " + www2.error);
                 retryCount++;
+
             }
         }
 
         if (!success1 && !success2)
         {
             Debug.LogError("Gagal menyimpan data ke kedua endpoint setelah " + maxRetries + " kali percobaan.");
+            //error.SetActive(true);
         }
     }
 }

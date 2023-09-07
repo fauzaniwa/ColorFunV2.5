@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour
     public static ColorPalatteData.Colors currentColor;
 
     public DesignObjController designObjController;
-
+    public GameObject ColorDanSave;
+    public GameObject CekGambar;
+   
 
     public List<GameObject> objectNotExport;
     public enum GameState
@@ -76,7 +78,8 @@ public class GameManager : MonoBehaviour
         Animator anim = designObjController.GetComponent<Animator>();
 
         anim.SetBool("finish", true);
-
+        ColorDanSave.SetActive(false);
+        CekGambar.SetActive(true);
     }
 
     public void LoadMainMenuScene()

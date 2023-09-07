@@ -8,7 +8,7 @@ public class CarouselScreenshot : MonoBehaviour
     public string uploadURL = "https://colorfun.registercepat.net/upload_image_colorfun.php";
     public string uploadURL2 = "https://dkvsaturasi.com/sampleproject/upload_image_colorfun.php"; // Tambahkan URL kedua
     public Camera camera2;
-
+    //public GameObject error;
     public int maxRetries = 3;
 
     private void Start()
@@ -23,21 +23,24 @@ public class CarouselScreenshot : MonoBehaviour
     public string TakeScreenshot()
     {
         DateTime now = DateTime.Now;
-        string dateTimeString = now.ToString("HHmmss_ddMMyyyy");
+        string dateTimeString = now.ToString("yyyyMMdd_HHmmss"); // Format: TahunBulanHari_JamMenitDetik
 
-        string fileName = dateTimeString + ".jpg";
+        string fileName = dateTimeString + ".jpg"; // Ganti ekstensi menjadi .jpg
 
         int originalCullingMask = camera2.cullingMask;
 
         int screenshotLayer = LayerMask.NameToLayer("ScreenshotLayer");
         camera2.cullingMask = 1 << screenshotLayer;
 
-        RenderTexture renderTexture = new RenderTexture(1920, 1080, 24);
+        int targetWidth = PlayerPrefs.GetInt("targetWidth", 1920);
+        int targetHeight = PlayerPrefs.GetInt("targetHeight", 1080);
+
+        RenderTexture renderTexture = new RenderTexture(targetWidth, targetHeight, 24);
         camera2.targetTexture = renderTexture;
-        Texture2D screenShot = new Texture2D(1920, 1080, TextureFormat.RGB24, false);
+        Texture2D screenShot = new Texture2D(targetWidth, targetHeight, TextureFormat.RGB24, false);
         camera2.Render();
         RenderTexture.active = renderTexture;
-        screenShot.ReadPixels(new Rect(0, 0, 1920, 1080), 0, 0);
+        screenShot.ReadPixels(new Rect(0, 0, targetWidth, targetHeight), 0, 0);
         camera2.targetTexture = null;
         RenderTexture.active = null;
         Destroy(renderTexture);
@@ -55,7 +58,7 @@ public class CarouselScreenshot : MonoBehaviour
 
         while (retryCount < maxRetries)
         {
-            byte[] imageData = image.EncodeToPNG();
+            byte[] imageData = image.EncodeToJPG(); // Menggunakan EncodeToJPG
 
             WWWForm form = new WWWForm();
             form.AddField("imageName", fileName);
@@ -83,6 +86,7 @@ public class CarouselScreenshot : MonoBehaviour
         if (retryCount >= maxRetries)
         {
             Debug.LogError("Gagal mengunggah gambar ke kedua server setelah " + maxRetries + " kali percobaan.");
+            //error.SetActive(true);
         }
     }
 }

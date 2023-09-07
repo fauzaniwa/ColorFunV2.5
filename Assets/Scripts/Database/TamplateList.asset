@@ -43,3 +43,18 @@ MonoBehaviour:
   - id: 9
     tamplateName: Tamplate_10
     tamplateObj: {fileID: -2366269573928678120, guid: e253c011e9ca1ce469a4e9cf7e84bc34, type: 3}
+  - id: 10
+    tamplateName: Tamplate_11
+    tamplateObj: {fileID: -2112347404393851219, guid: 9cac9e2fbc8717842b683f5faa7fb72b, type: 3}
+  - id: 11
+    tamplateName: Tamplate_12
+    tamplateObj: {fileID: 4256140323613326807, guid: f6b69c5644f840b4aa768076d628482b, type: 3}
+  - id: 12
+    tamplateName: Tamplate_13
+    tamplateObj: {fileID: 8219965941142065533, guid: b751398800135914181ab42be4c13f79, type: 3}
+  - id: 13
+    tamplateName: Tamplate_14
+    tamplateObj: {fileID: -336168796068747114, guid: 5b68dea1e491bed4388b16de33159c8a, type: 3}
+  - id: 14
+    tamplateName: Tamplate_15
+    tamplateObj: {fileID: -2366269573928678120, guid: 7381cb17b652d304badf411fa43c8bee, type: 3}

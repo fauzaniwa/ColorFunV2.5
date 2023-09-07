@@ -8,9 +8,14 @@ public class UpdateEndPoint : MonoBehaviour
     public TMP_InputField phpEndpointSaveDataInputField;
     public GameObject successPopup; // Referensi ke objek popup sukses
     public TMP_Dropdown templateDropdown; // Referensi ke dropdown template
+    public TMP_InputField targetWidthInputField; // Referensi ke input field targetWidth
+    public TMP_InputField targetHeightInputField; // Referensi ke input field targetHeight
+    public GameObject BG1; // Referensi ke bg 1
+    public GameObject BG2; // Referensi ke bg 2
 
     public GameObject template1; // Referensi ke GameObject Template 1
     public GameObject template2; // Referensi ke GameObject Template 2 Hindi
+    public GameObject template3; // Referensi ke GameObject Template 3
 
     private void Start()
     {
@@ -31,6 +36,10 @@ public class UpdateEndPoint : MonoBehaviour
         int selectedTemplate = PlayerPrefs.GetInt("SelectedTemplate", 1); // Default: Template 1
         templateDropdown.value = selectedTemplate - 1; // Kurangi 1 karena index dimulai dari 0
         templateDropdown.RefreshShownValue();
+
+        // Tampilkan nilai targetWidth dan targetHeight dari PlayerPrefs
+        targetWidthInputField.text = PlayerPrefs.GetInt("targetWidth", 1920).ToString();
+        targetHeightInputField.text = PlayerPrefs.GetInt("targetHeight", 1080).ToString();
     }
 
     private void InitializeDropdownContent()
@@ -47,9 +56,16 @@ public class UpdateEndPoint : MonoBehaviour
         // Simpan nilai input field ke dalam PlayerPrefs
         PlayerPrefs.SetString("ImageEndPoint", uploadURLInputField.text);
         PlayerPrefs.SetString("DatabaseEndPoint", phpEndpointSaveDataInputField.text);
+
+        // Simpan nilai targetWidth dan targetHeight ke dalam PlayerPrefs
+        int targetWidth = string.IsNullOrEmpty(targetWidthInputField.text) ? 1920 : int.Parse(targetWidthInputField.text);
+        int targetHeight = string.IsNullOrEmpty(targetHeightInputField.text) ? 1080 : int.Parse(targetHeightInputField.text);
+        PlayerPrefs.SetInt("targetWidth", targetWidth);
+        PlayerPrefs.SetInt("targetHeight", targetHeight);
+
         PlayerPrefs.Save();
 
-        Debug.Log("Nilai UploadURL dan phpEndpointSaveDataInputField berhasil disimpan!");
+        Debug.Log("Nilai UploadURL, phpEndpointSaveDataInputField, targetWidth, dan targetHeight berhasil disimpan!");
 
         // Tampilkan popup sukses
         successPopup.SetActive(true);
@@ -70,14 +86,20 @@ public class UpdateEndPoint : MonoBehaviour
         if (index == 0)
         {
             PlayerPrefs.SetInt("SelectedTemplate", 1); // Template 1
+            BG1.SetActive(true);
+            BG2.SetActive(false);
         }
         else if (index == 1)
         {
             PlayerPrefs.SetInt("SelectedTemplate", 2); // Template 2 Hindi
+            BG1.SetActive(true);
+            BG2.SetActive(false);
         }
         else if (index == 2)
         {
             PlayerPrefs.SetInt("SelectedTemplate", 3); // Template 3
+            BG1.SetActive(false);
+            BG2.SetActive(true);
         }
     }
 }
