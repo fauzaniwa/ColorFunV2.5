@@ -7,4 +7,9 @@ public class ButtonBehavior : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void SelectRangkulFeature()
+    {
+        PlayerPrefs.SetInt("SelectedTemplate", 4);
+    }
 }

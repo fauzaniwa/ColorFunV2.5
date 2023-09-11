@@ -8,4 +8,7 @@ public class GameData : ScriptableObject
 {
     public TamplateDesignData.Tamplate currenntTamplate;
     public string currentAuthor;
+    public string currentReceiver;
+    public string currentMenfess;
+    public int currentFont;
 }

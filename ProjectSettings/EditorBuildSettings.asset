@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ColoringScene.unity
     guid: 5fa18304abad1354c9bfcbd24f5d5add
+  - enabled: 1
+    path: Assets/Scenes/MenfesScene.unity
+    guid: 21033ad6f3d825b45b937c2e4e85ba70
   m_configObjects: {}
