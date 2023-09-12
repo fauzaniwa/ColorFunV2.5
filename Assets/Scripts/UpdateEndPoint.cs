@@ -6,6 +6,8 @@ public class UpdateEndPoint : MonoBehaviour
 {
     public TMP_InputField uploadURLInputField;
     public TMP_InputField phpEndpointSaveDataInputField;
+    public TMP_InputField menfessEndpointInputField; // Tambahkan ini
+
     public GameObject successPopup; // Referensi ke objek popup sukses
     public TMP_Dropdown templateDropdown; // Referensi ke dropdown template
     public TMP_InputField targetWidthInputField; // Referensi ke input field targetWidth
@@ -22,6 +24,7 @@ public class UpdateEndPoint : MonoBehaviour
         // Mendapatkan nilai dari PlayerPrefs dan inisialisasi input field
         uploadURLInputField.text = PlayerPrefs.GetString("ImageEndPoint", "");
         phpEndpointSaveDataInputField.text = PlayerPrefs.GetString("DatabaseEndPoint", "");
+        menfessEndpointInputField.text = PlayerPrefs.GetString("DatabaseEndPoint2", ""); // Tambahkan ini
 
         // Matikan popup sukses pada awalnya
         successPopup.SetActive(false);
@@ -56,6 +59,7 @@ public class UpdateEndPoint : MonoBehaviour
         // Simpan nilai input field ke dalam PlayerPrefs
         PlayerPrefs.SetString("ImageEndPoint", uploadURLInputField.text);
         PlayerPrefs.SetString("DatabaseEndPoint", phpEndpointSaveDataInputField.text);
+        PlayerPrefs.SetString("DatabaseEndPoint2", menfessEndpointInputField.text); // Tambahkan ini
 
         // Simpan nilai targetWidth dan targetHeight ke dalam PlayerPrefs
         int targetWidth = string.IsNullOrEmpty(targetWidthInputField.text) ? 1920 : int.Parse(targetWidthInputField.text);
@@ -65,7 +69,7 @@ public class UpdateEndPoint : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        Debug.Log("Nilai UploadURL, phpEndpointSaveDataInputField, targetWidth, dan targetHeight berhasil disimpan!");
+        Debug.Log("Nilai UploadURL, phpEndpointSaveDataInputField, DatabaseEndPoint2, targetWidth, dan targetHeight berhasil disimpan!");
 
         // Tampilkan popup sukses
         successPopup.SetActive(true);

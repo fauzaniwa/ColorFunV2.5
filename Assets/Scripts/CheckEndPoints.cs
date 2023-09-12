@@ -18,8 +18,11 @@ public class CheckEndpoints : MonoBehaviour
     {
         string imageEndpoint = PlayerPrefs.GetString("ImageEndPoint");
         string databaseEndpoint = PlayerPrefs.GetString("DatabaseEndPoint");
+        string databaseEndpoint2 = PlayerPrefs.GetString("DatabaseEndPoint2"); // Tambahkan ini untuk DatabaseEndPoint2
 
-        if (string.IsNullOrEmpty(imageEndpoint) || string.IsNullOrEmpty(databaseEndpoint))
+        bool hasNullEndpoints = string.IsNullOrEmpty(imageEndpoint) || string.IsNullOrEmpty(databaseEndpoint) || string.IsNullOrEmpty(databaseEndpoint2);
+
+        if (hasNullEndpoints)
         {
             Debug.Log("Satu atau lebih endpoint bernilai null atau kosong.");
             nullEndpointsPopup.SetActive(true);
