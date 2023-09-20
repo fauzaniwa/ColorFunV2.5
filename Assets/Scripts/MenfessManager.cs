@@ -20,7 +20,8 @@ public class MenfessManager : MonoBehaviour
 
     private void SpawnMenfes()
     {
-        var obj = Instantiate(menfesTamplateList[0]);
+        int indexTamplate = PlayerPrefs.GetInt("SelectedMenfesTamplate");
+        var obj = Instantiate(menfesTamplateList[indexTamplate]);
         menfessController = obj.GetComponent<MenfessController>();
     }
 

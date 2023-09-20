@@ -15,7 +15,7 @@ public class CekFiturAktiv : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void SetFiturAktiv(int value)
@@ -25,15 +25,15 @@ public class CekFiturAktiv : MonoBehaviour
     }
 
     public void GetFeatureActive()
-    { 
+    {
         int featureValue = PlayerPrefs.GetInt("featureValue");
 
-        if (featureValue == 0)
+        if(featureValue == 0)
         {
             MessageFeature.SetActive(false);
             ColoringFeature.SetActive(true);
         }
-        else if (featureValue == 1)
+        else if(featureValue == 1)
         {
             ColoringFeature.SetActive(false);
             MessageFeature.SetActive(true);

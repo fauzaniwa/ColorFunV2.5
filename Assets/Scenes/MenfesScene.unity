@@ -154,7 +154,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1953911895}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -335,7 +335,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116039815}
-  - component: {fileID: 116039814}
   - component: {fileID: 116039816}
   m_Layer: 0
   m_Name: Server
@@ -344,22 +343,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &116039814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116039813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 735f69287a34bbf40a1cce8b706460dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  phpEndpointSaveData: https://dkvsaturasi.com/sampleproject/simpan_data_colorfun.php
-  phpEndpointSaveData2: https://dkvsaturasi.com/sampleproject/simpan_data_colorfun2.php
-  saveButton: {fileID: 0}
-  gameData: {fileID: 11400000, guid: e5f9144c95f604c4190b43526f4bcab7, type: 2}
 --- !u!4 &116039815
 Transform:
   m_ObjectHideFlags: 0
@@ -873,7 +856,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1953911895}
-  m_RootOrder: -1
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1006,7 +989,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1961463609}
-  m_RootOrder: -1
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1321,7 +1304,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1961463609}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1888,6 +1871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menfesTamplateList:
   - {fileID: 5241112387579906355, guid: 42df84a621ba1ce4e90e873d6ecc062a, type: 3}
+  - {fileID: 8468311017908390651, guid: 615ea74de48c43f4a8560e5907049a92, type: 3}
   menfessController: {fileID: 0}
   ColorDanSave: {fileID: 1961463608}
   CekGambar: {fileID: 1953911893}
@@ -2035,7 +2019,7 @@ Transform:
   - {fileID: 51588997}
   - {fileID: 1166086046}
   m_Father: {fileID: 1052692812}
-  m_RootOrder: -1
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1961463608
 GameObject:
@@ -2069,7 +2053,7 @@ Transform:
   - {fileID: 1615816776}
   - {fileID: 1185297780}
   m_Father: {fileID: 1052692812}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1961463610
 Animator:
